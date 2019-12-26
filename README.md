@@ -188,3 +188,129 @@ vi 에디터 실행 `=>` 명령 모드 `=>` `esc` 키를 통해 **입력 모드*
 |           `:`q!           | 편집한 내용을 저장하지 않고 종료                             |
 | `:%s/기존문자열/새문자열` | 문자열 치환하기                                              |
 
+***
+### CD 연결하기
+
+1. /media/cdrom 폴더를 만든다
+
+2. 물리적인 cdrom을 위의 폴더로 mount한다.
+
+3. cdrom에 있는 RPM-* 파일들을 /에 복사한다.
+
+4. 물리적인 cdrom을 umount 한다.
+
+
+   1. mkdir mycdrom
+
+      > mycdrom 파일 생성
+
+   2. ls
+
+      > 파일 확인
+
+   3. mount /dev/cdrom /root/mycdrom
+
+      > device/cdrom의 CD를 방금 만든 파일에 연결
+
+   4. cd mycdrom
+
+      > mycdrom으로 이동
+
+   5. ls
+
+      > 연결된 CD를 확인해보자
+
+   6. cd Packages/
+
+      > CD 구성품 중 Packages 폴더로 이동
+
+   7. ls mc*
+
+      > 그중 mc~로 시작하는 파일을 목록 출력
+
+   8. cp mc-4* ~
+
+      > root 파일로 복사하자
+
+   9. cd
+
+      > root 홈화면으로 이동
+
+   10. umount /dev/cdrom
+
+       > 복사가 완료된 것을 확인했다면 연결을 해제
+
+
+
+***
+
+#### 기타 명령어
+
+- shutdown -P +3
+
+  > 이 프로그램을 3분 뒤 종료해랏!
+
+- shutdown -c
+
+  > 종료 명령어 취소요..
+
+- man ls
+
+  > 명령어 목록 출력
+
+***
+
+### 서버에 자바, 이클립스, 톰캣 설치하기
+
+1. JAVA
+   1. tar xvf jdk-8u221-linux-x64.tar.gz
+   2.  mv jdk1.8.0_221 jdk1.8.0
+   3. cp -r jdk1.8.0 /etc
+   4. cd /usr/bin
+   5.  ls -l java
+   6.  rm java
+   7.  ln -s /etc/jdk1.8.0/bin/java java
+   8.  java -version
+   9.  ls -l java
+2. Eclipse
+   1. tar xvf eclipse-jee-oxygen-3a-linux-gtk-x86_64.tar.gz
+   2. cp -r ./eclipse /etc
+   3. cd /etc/eclipse
+   4. ls
+   5. cd /usr/bin
+   6. ln -s /etc/eclipse/eclipse eclipse
+   7. ls -l eclipse
+   8. eclipse -version
+3. Tomcat
+   1. tar xvf apache-tomcat-9.0.22.tar.gz 
+   2. ls
+   3. cd apache-tomcat-9.0.22/
+   4. ls
+   5. cd conf
+   6. ls
+   7. vi server.xml
+   8.  Port 번호 80으로 바꿔주기
+   9. cd /bin
+   10. ls
+   11. cd 다운로드
+   12. cp -r apache-tomcat-9.0.22 /etc
+   13. cd /etc/apache-tomcat-9.0.22/
+   14. ls
+   15.  cd /bin
+   16. firewall-config
+   17. cd
+   18. cd /usr/bin
+   19. ln -s /etc/apache-tomcat-9.0.22/bin/startup.sh starttomcat
+   20. ls -l starttomcat
+   21. ln -s /etc/apache-tomcat-9.0.22/bin/shutdown.sh stoptomcat
+   22.  ls -l stoptomcat
+
+***
+
+yum -y install system-config-date
+
+++날짜 설정 명령어
+
+find /root/temp -name "*.txt" -exec rm {} \;
+
+++ /root/temp/ 경로에 있는 .txt 확장자를 가진 모든 파일
