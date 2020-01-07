@@ -314,3 +314,180 @@ yum -y install system-config-date
 find /root/temp -name "*.txt" -exec rm {} \;
 
 ++ /root/temp/ 경로에 있는 .txt 확장자를 가진 모든 파일
+***
+
+
+- MySQL 연습용 테이블 만들기
+
+  - `create database shop;`
+
+  - `use shop;`
+
+  - creat table USERS(
+
+    id varchar2(10) primary key,
+
+    pwd varchar2(10),
+
+    name nvarchar2(10),
+
+    age number(3)
+
+    ​	);
+
+  - insert into users values('id01','pwd01','귤',10);
+
+    insert into users values('id02','pwd02','사과',10);
+
+    insert into users values('id03','pwd03','복숭아',10);
+
+  - select * from users;
+
+    
+
+- oracle 환경변수 설정
+
+` . /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh`
+
+***
+
+### Maria DB와 MySQL 설치하기
+
+1. yum -y remove mariadb-libs
+
+> 리눅스에 이미 설치되어 있는 마리아 디비 라이브러리를 삭제해준다.
+
+2. yum -y localinstall Maria*
+
+> yum 명령어로 Maria DB 설치에 필요한 세가지 파일을 설치해준다.
+
+3. systemctl restart mysql
+4. systemctl status mysql
+5. firewall-config
+6. mysql
+7. mysqladmin -u root password '111111'
+8. mysql -u root -p
+9. mysql -h 192.168.112.102 -u root -p
+10. mysql -h 192.168.112.102 -u muser -p
+
+
+
+### 오라클 설치하기
+
+1. unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip
+
+2. cd Disk1
+
+3. swapon -s
+
+4. dd if=/dev/zero of=/swapfile bs=1024 count=4194304
+
+   > 오라클은 설치 및 실행에 필요한 하드 디스크 용량이 4GB 이기 때문에, 
+   >
+   > 처음 설정해주었던 여분의 하드 디스크 메모리 용량을 추가해주어야 한다.
+
+5. mkswap /swapfile
+
+   > swapfile을 만든다
+
+6. swapon /swapfile
+
+7. cd /etc/rc.d
+
+8. chmod 755 rc.local
+
+   > 해당 파일의 권한 변경
+
+9. vi rc.local
+
+10. reboot
+
+11. 
+
+>   621  
+>   622  systemctl status mysql
+>   623  chkconfig mysql on
+>   624  firewall-config
+>   625  mysql
+>   626  cd
+>   627  mysqladmin -u root password '111111'
+>   628  mysql -u root -p
+>   629  history
+>   630  mysql -u root -p
+>   631  mysql -h 192.168.112.102 -u root -p
+>   632  mysql -h 192.168.112.102 -u muser -p
+>   633  history
+>   634  mysql -h 192.168.112.102 -u muser -p
+>   635  mysql
+>   636  mysql -u root -p
+>   637  use mysql
+>   638  use sql\
+>   639  mysql -u muser -p
+>   640  cd
+>   641  cd 다운로드
+>   642  ls
+>   643  unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip 
+>   644  ls
+>   645  cd Disk1
+>   646  ls
+>   647  dd
+>   648  df
+>   649  swapon -s
+>   650  dd if=/dev/zero of=/ swapfile bs=1024 count=4194304
+>   651  dd if=/dev/zero of=/swapfile bs=1024 count=4194304
+>   652  mkswap /swapfile
+>   653  swapon /swapfile
+>   654  swapon -s
+>   655  cd /etc/rc.d
+>   656  ls
+>   657  chmod 755 rc.local
+>   658  ls
+>   659  vi rc.local
+>   660  reboot
+>   661  swapon -s
+>   662  cd 다운로드
+>   663  ls
+>   664  cd Disk1
+>   665  ls
+>   666  yum -y localinstall ora*
+>   667  ls
+>   668  service oracle-xe configure
+>   669  /etc/init.d/oracle-xe status
+>   670  . /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh
+>   671  cd /etc/bashrc
+>   672  vi /etc/bashrc
+>   673  reboot
+>   674  history
+
+
+
+shop 이름으로 workspace create
+
+***
+
+서버 네트워크 에딧 설정 들어가서 
+
+네트워크 Bridged 설정
+
+
+
+vi /etc/sysconfig/network-scripts/ifcfg-eno16777736
+
+ipaddres~dns
+
+ ip : 70.12.113.XXX
+net:255.255.255.0
+
+gw:70.12.113.1
+
+dns:168.126.63.1
+
+
+
+systemctl restart network
+
+ping으로 확인해보기
+
+***
+
+ls /dev/sd*
