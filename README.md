@@ -402,62 +402,46 @@ find /root/temp -name "*.txt" -exec rm {} \;
 
 10. reboot
 
-11. 
+11.systemctl status mysql
 
->   621  
->   622  systemctl status mysql
->   623  chkconfig mysql on
->   624  firewall-config
->   625  mysql
->   626  cd
->   627  mysqladmin -u root password '111111'
->   628  mysql -u root -p
->   629  history
->   630  mysql -u root -p
->   631  mysql -h 192.168.112.102 -u root -p
->   632  mysql -h 192.168.112.102 -u muser -p
->   633  history
->   634  mysql -h 192.168.112.102 -u muser -p
->   635  mysql
->   636  mysql -u root -p
->   637  use mysql
->   638  use sql\
->   639  mysql -u muser -p
->   640  cd
->   641  cd 다운로드
->   642  ls
->   643  unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip 
->   644  ls
->   645  cd Disk1
->   646  ls
->   647  dd
->   648  df
->   649  swapon -s
->   650  dd if=/dev/zero of=/ swapfile bs=1024 count=4194304
->   651  dd if=/dev/zero of=/swapfile bs=1024 count=4194304
->   652  mkswap /swapfile
->   653  swapon /swapfile
->   654  swapon -s
->   655  cd /etc/rc.d
->   656  ls
->   657  chmod 755 rc.local
->   658  ls
->   659  vi rc.local
->   660  reboot
->   661  swapon -s
->   662  cd 다운로드
->   663  ls
->   664  cd Disk1
->   665  ls
->   666  yum -y localinstall ora*
->   667  ls
->   668  service oracle-xe configure
->   669  /etc/init.d/oracle-xe status
->   670  . /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh
->   671  cd /etc/bashrc
->   672  vi /etc/bashrc
->   673  reboot
->   674  history
+12. chkconfig mysql on
+13. firewall-config
+   625  mysql
+   626  cd
+   627  mysqladmin -u root password '111111'
+   628  mysql -u root -p
+   629  history
+   630  mysql -u root -p
+   631  mysql -h 192.168.112.102 -u root -p
+   632  mysql -h 192.168.112.102 -u muser -p
+   633  history
+   634  mysql -h 192.168.112.102 -u muser -p
+   635  mysql
+   636  mysql -u root -p
+   637  use mysql
+   638  use sql\
+   639  mysql -u muser -p
+
+   643  unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip 
+   645  cd Disk1
+   649  swapon -s
+   651  dd if=/dev/zero of=/swapfile bs=1024 count=4194304
+   652  mkswap /swapfile
+   653  swapon /swapfile
+   654  swapon -s
+   655  cd /etc/rc.d
+   657  chmod 755 rc.local
+   659  vi rc.local
+   660  reboot
+   661  swapon -s
+   664  cd Disk1
+   666  yum -y localinstall ora*
+   668  service oracle-xe configure
+   669  /etc/init.d/oracle-xe status
+   670  . /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh
+   671  cd /etc/bashrc
+   672  vi /etc/bashrc
+   673  reboot
 
 
 
