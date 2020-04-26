@@ -406,42 +406,41 @@ find /root/temp -name "*.txt" -exec rm {} \;
 
 12. chkconfig mysql on
 13. firewall-config
-   625  mysql
-   626  cd
-   627  mysqladmin -u root password '111111'
-   628  mysql -u root -p
-   629  history
-   630  mysql -u root -p
-   631  mysql -h 192.168.112.102 -u root -p
-   632  mysql -h 192.168.112.102 -u muser -p
-   633  history
-   634  mysql -h 192.168.112.102 -u muser -p
-   635  mysql
-   636  mysql -u root -p
-   637  use mysql
-   638  use sql\
-   639  mysql -u muser -p
-
-   643  unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip 
-   645  cd Disk1
-   649  swapon -s
-   651  dd if=/dev/zero of=/swapfile bs=1024 count=4194304
-   652  mkswap /swapfile
-   653  swapon /swapfile
-   654  swapon -s
-   655  cd /etc/rc.d
-   657  chmod 755 rc.local
-   659  vi rc.local
-   660  reboot
-   661  swapon -s
-   664  cd Disk1
-   666  yum -y localinstall ora*
-   668  service oracle-xe configure
-   669  /etc/init.d/oracle-xe status
-   670  . /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh
-   671  cd /etc/bashrc
-   672  vi /etc/bashrc
-   673  reboot
+14.   mysql
+15.   cd
+16.   mysqladmin -u root password '111111'
+17.   mysql -u root -p
+18.   history
+19.   mysql -u root -p
+20.   mysql -h 192.168.112.102 -u root -p
+21.   mysql -h 192.168.112.102 -u muser -p
+22.   history
+23.   mysql -h 192.168.112.102 -u muser -p
+24.   mysql
+25.   mysql -u root -p
+26.   use mysql
+27.   use sql\
+28.   mysql -u muser -p
+29.   unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip 
+30.   cd Disk1
+31.   swapon -s
+32.   dd if=/dev/zero of=/swapfile bs=1024 count=4194304
+33.   mkswap /swapfile
+34.   swapon /swapfile
+35.   swapon -s
+36.   cd /etc/rc.d
+37.   chmod 755 rc.local
+38.   vi rc.local
+39.   reboot
+40.   swapon -s
+41.   cd Disk1
+42.   yum -y localinstall ora*
+43.   service oracle-xe configure
+44.   /etc/init.d/oracle-xe status
+45.   . /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh
+46.   cd /etc/bashrc
+47.   vi /etc/bashrc
+48.   reboot
 
 
 
